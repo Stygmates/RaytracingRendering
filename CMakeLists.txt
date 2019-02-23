@@ -4,9 +4,9 @@ set (Raytracing_VERSION_MAJOR 0)
 set (Raytracing_VERSION_MINOR 1)
 
 set(SOURCES
-    src/main.cxx
-    src/Triangle.cxx
-    src/ObjLoader.cxx
+    src/main.cpp
+    src/Triangle.cpp
+    src/ObjLoader.cpp
 )
 
 
