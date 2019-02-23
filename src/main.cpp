@@ -17,6 +17,12 @@ int main(int argc, char **argv)
     spdlog::error( "Failed to import file {}", filename );
     return -1;
   }
+  vector<Shape*> shapes;
+  if( !obj.loadShapes( shapes ) )
+  {
+    spdlog::error( "Failed to load the shapes" );
+    return -1;
+  }
 
   return 0;
 }
