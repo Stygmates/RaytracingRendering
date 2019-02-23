@@ -19,7 +19,7 @@ bool ObjLoader::import( std::string filename )
   this->scene = this->importer->ReadFile( filename, aiProcessPreset_TargetRealtime_Quality );
   if(this->scene == NULL)
   {
-    spdlog::error( "ObjLoader::import: Failed to read the file {}", filename );
+    spdlog::error( "ObjLoader::import: Failed to import the file {}", filename );
     return false;
   }
   this->importer->SetPropertyInteger( AI_CONFIG_PP_SBP_REMOVE, aiPrimitiveType_LINE | aiPrimitiveType_POINT );
@@ -35,7 +35,7 @@ bool ObjLoader::loadShapes( std::vector<Shape*> &shapes )
     spdlog::error( "Loader::loadData: No scene loaded" );
     return false;
   }
-  spdlog::debug( "Number of meshes: {}", this->scene->mNumMeshes );
+  spdlog::info( "Number of meshes: {}", this->scene->mNumMeshes );
   if( this->scene->HasMeshes() )
   {
     for( unsigned int i = 0; i < this->scene->mNumMeshes; i++ )
