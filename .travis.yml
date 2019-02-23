@@ -1,6 +1,6 @@
 language: cpp
 compiler: gcc
-dist: bionic
+dist: trusty
 
 before_install:
   - sudo add-apt-repository -y ppa:ubuntu-toolchain-r/test
@@ -9,6 +9,7 @@ install:
   - sudo apt-get install -qq g++-6 build-essential libglm-dev libspdlog-dev libassimp-dev
   - sudo update-alternatives --install /usr/bin/g++ g++ /usr/bin/g++-6 90
 script:
+  - locate glmConfig.cmake
   - mkdir build
   - cd build
   - cmake ../
