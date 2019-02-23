@@ -14,7 +14,7 @@ ObjLoader::ObjLoader()
 
 bool ObjLoader::import( std::string filename )
 {
-  spdlog::info( "Reading file {}", filename );
+  spdlog::info( "Importing file {}", filename );
   this->importer = new Assimp::Importer();
   this->scene = this->importer->ReadFile( filename, aiProcessPreset_TargetRealtime_Quality );
   if(this->scene == NULL)
@@ -23,7 +23,7 @@ bool ObjLoader::import( std::string filename )
     return false;
   }
   this->importer->SetPropertyInteger( AI_CONFIG_PP_SBP_REMOVE, aiPrimitiveType_LINE | aiPrimitiveType_POINT );
-  spdlog::info( "File {} read successfully", filename );
+  spdlog::info( "File {} imported successfully", filename );
   return true;
 }
 
