@@ -7,6 +7,8 @@ set(SOURCES
     src/main.cpp
     src/Triangle.cpp
     src/ObjLoader.cpp
+    src/Camera.cpp
+    src/Ray.cpp
 )
 
 
