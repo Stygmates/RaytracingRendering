@@ -20,10 +20,3 @@ bool Triangle::intersects_ray( Ray r )
   float distance;
   return glm::intersectRayTriangle( r.get_origin(), r.get_direction(), vertices[ 0 ], vertices[ 1 ], vertices[ 2 ], barycentre, distance);
 }
-
-bool Triangle::intersects_ray2( Ray r )
-{
-  glm::vec2 barycentre;
-  float distance;
-  return glm::intersectRayTriangle( r.get_origin(), r.get_direction(), vertices[ 0 ], vertices[ 1 ], vertices[ 2 ], barycentre, distance);
-}
