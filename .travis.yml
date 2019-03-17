@@ -11,5 +11,5 @@ install:
   - sudo update-alternatives --install /usr/bin/g++ g++ /usr/bin/g++-6 90
 script:
   - (wget https://github.com/g-truc/glm/releases/download/0.9.9.3/glm-0.9.9.3.zip && unzip -qq glm-0.9.9.3.zip && cd glm && mkdir build && cd build && cmake ../ && make && sudo make install)
-      - build-wrapper-linux-x86-64 --out-dir bw_output ./build.sh
-      - sonar-scanner
+  - build-wrapper-linux-x86-64 --out-dir bw_output ./build.sh
+  - sonar-scanner
