@@ -1,5 +1,4 @@
-language: java
-dist: bionic
+language: cpp
 addons:
   sonarcloud:
     organization: "stygmates-github"
