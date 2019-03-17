@@ -6,9 +6,10 @@ before_install:
   - sudo add-apt-repository -y ppa:ubuntu-toolchain-r/test
   - sudo apt-get update -qq
 install:
-  - sudo apt-get install -qq g++-6 build-essential libassimp-dev
+  - sudo apt-get install -qq g++-6 build-essential
   - sudo update-alternatives --install /usr/bin/g++ g++ /usr/bin/g++-6 90
 script:
   - (wget https://github.com/g-truc/glm/releases/download/0.9.9.3/glm-0.9.9.3.zip && unzip -qq glm-0.9.9.3.zip && cd glm && mkdir build && cd build && cmake ../ && make && sudo make install)
+  - (wget https://github.com/assimp/assimp/archive/v4.1.0.zip && unzip -qq assimp-4.1.0.zip && cd assimp-4.1.0 && mkdir build && cd build && cmake ../ && make && sudo make install)
   - build-wrapper-linux-x86-64 --out-dir bw_output ./build.sh
   - sonar-scanner
