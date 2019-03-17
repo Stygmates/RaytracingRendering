@@ -14,4 +14,5 @@ script:
   - mkdir build && cd build
   - cmake ../
   - build-wrapper-linux-x86-64 --out-dir bw_output make clean all
+  - cd ..
   - sonar-scanner
